@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BikeService } from 'src/app/service/bike.service';
 import{FormControl,FormGroup,Validators} from "@angular/forms"
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -13,13 +14,13 @@ export class HomeComponent implements OnInit {
     'Globo Carbon Fiber Race Series',
     'Globo Time Trial Blade',
 ];
-   bikeForm: FormGroup;
+   bikeform: FormGroup;
    validMessage: string="";
 
   constructor(private bikeServ:BikeService) { }
 
   ngOnInit() {
-    this.bikeForm=new FormGroup({
+    this.bikeform=new FormGroup({
       name: new FormControl('',Validators.required),
       email: new FormControl('',Validators.required),
       phone: new FormControl('',Validators.required),
@@ -30,6 +31,23 @@ export class HomeComponent implements OnInit {
       contact: new FormControl()
       
     });
+  }
+
+  submitRegistration(){
+    if(this.bikeform.valid){
+      this.validMessage="Your Bike registration has been submitted";
+      this.bikeServ.createBikeRegistration(this.bikeform.value).subscribe(
+        data=>{
+          this.bikeform.reset();
+          return true;
+        },
+        error=>{
+          return Observable.throw(error);
+        }
+      )
+    } else {
+      this.validMessage="Please Fill out the form before Submitting";
+    }
   }
 
 }

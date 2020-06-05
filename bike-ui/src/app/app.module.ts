@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { BikeService } from './service/bike.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent
+    AdminComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

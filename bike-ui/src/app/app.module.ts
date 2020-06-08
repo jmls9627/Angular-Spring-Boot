@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
 import { CallbackComponent } from './components/callback/callback.component';
+import { AuthService } from './service/auth.service';
 
 
 @NgModule({
@@ -27,7 +28,10 @@ import { CallbackComponent } from './components/callback/callback.component';
     ReactiveFormsModule
     
   ],
-  providers: [BikeService],
+  providers: [BikeService,
+              AuthService],
+
+              
   bootstrap: [AppComponent]
 })
 export class AppModule { }

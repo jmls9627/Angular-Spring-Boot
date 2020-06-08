@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
 import { CallbackComponent } from './components/callback/callback.component';
 import { AuthService } from './service/auth.service';
+import { AuthGuard } from './service/auth.guard';
 
 
 @NgModule({
@@ -29,9 +30,10 @@ import { AuthService } from './service/auth.service';
     
   ],
   providers: [BikeService,
-              AuthService],
+              AuthService,
+              AuthGuard],
 
-              
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,6 +14,7 @@ import { AuthService } from './service/auth.service';
 import { AuthGuard } from './service/auth.guard';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { AuthGuard } from './service/auth.guard';
   ],
   providers: [BikeService,
               AuthService,
-              AuthGuard],
+              AuthGuard
+            ],
 
 
   bootstrap: [AppComponent]

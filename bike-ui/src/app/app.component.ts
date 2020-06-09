@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'bike-ui';
   
   constructor(private authService:AuthService){
-    authService.handleAuthentication();
+    this.authService.handleAuthentication();
   }
-  
+
 }

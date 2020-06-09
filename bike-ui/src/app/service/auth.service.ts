@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import 'rxjs/add/operator/filter';
+
 import * as auth0 from 'auth0-js';
 
 @Injectable()
 export class AuthService {
 
   auth0 = new auth0.WebAuth({
-    clientID: 'Fb1R3RGxBze6RDk1pMfSW4OgM49Rq8WX',
+    clientID: 'xgjyG8ZeYs6OkcOA1se7ytiSYMNq3fHC',
     domain: 'jmls.auth0.com',
     responseType: 'token id_token',
     audience: 'http://localhost:8080',

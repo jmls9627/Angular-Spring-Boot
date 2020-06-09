@@ -7,14 +7,32 @@ import { CallbackComponent } from './components/callback/callback.component';
 import { AuthGuard } from './service/auth.guard';
 
 
+
+
 const routes:Routes=[
-  { path:'', component:HomeComponent},
-  { path:'admin/view/:id', component:ViewRegistrationComponent, canActivate:[AuthGuard]},
-  { path:'admin', component:AdminComponent, canActivate:[AuthGuard]},
-  { path:'callback', component:CallbackComponent}
-  
-  
- 
+
+  { 
+    path:'',
+   component:HomeComponent
+  },
+
+  { 
+    path:'admin/view/:id',
+   component: ViewRegistrationComponent,
+    canActivate:[AuthGuard]
+  },
+
+  { 
+    path:'admin',
+   component:AdminComponent,
+   canActivate:[AuthGuard]
+  },
+
+  { 
+    path:'callback',
+    component:CallbackComponent
+    }
+    
 ];
 
 @NgModule({
